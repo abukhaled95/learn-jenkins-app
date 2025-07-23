@@ -4,6 +4,7 @@ pipeline {
     environment {
         NETLIFY_SITE_ID = '323777a4-ec05-4c03-bb3e-5f1effddfe56'
         NETLIFY_AUTH_TOKEN = credentials('netlify-token')
+        REACT_APP_VERSION = '1.2.3'
     }
 
     stages {
@@ -88,14 +89,6 @@ pipeline {
                     node_modules/.bin/netlify status
                     node_modules/.bin/netlify deploy --dir=build 
                 '''
-            }
-        }
-
-        stage('Approval') {
-            steps {
-                timeout(time: 1, unit: 'HOURS') {
-                    input 'Ready to deploy?'
-                }
             }
         }
 
