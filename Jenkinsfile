@@ -8,8 +8,6 @@ pipeline {
 
     stages {
 
-        }
-
         stage('Deploy staging') {
             agent {
                 docker {
@@ -45,7 +43,6 @@ pipeline {
                 '''
             }
         }
-
 
     }
 
