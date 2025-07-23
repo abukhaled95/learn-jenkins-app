@@ -8,10 +8,9 @@ pipeline {
 
     stages {
 
-        stage('Docker'){
-            steps{
-                FROM mcr.microsoft.com/playwright:v1.39.0-jammy
-                RUN npm install -g netlify-cli node-jq
+        stage('Docker') {
+            steps {
+                sh 'docker build -t my-playwright .'
             }
         }
 
