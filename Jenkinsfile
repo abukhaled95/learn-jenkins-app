@@ -17,7 +17,7 @@ pipeline {
             }
             steps {
                 sh '''
-                    echo 'Deploying staging...
+                    echo 'Deploying staging...'
                 '''
             }
         }
